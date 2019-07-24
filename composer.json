@@ -1,0 +1,38 @@
+{
+    "name": "phink/puzzle",
+    "type": "library",
+    "description": "Tiny CMS builder library based on Phink framework",
+    "homepage": "https://phink.org",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "David Blanchard",
+            "email": "dblanchard1@bbox.fr",
+            "homepage": "https://code-phoenix.org",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/lib/"
+        ],
+        "exclude-from-classmap": [
+            "src/lib/puzzle_library.php"
+        ],
+        "psr-4": {
+            "Puzzle\\" : ""
+        },
+        "files": [
+            "src/lib/ipz_misc.php"
+        ]
+    },
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.3.*"
+    },
+    "include-path": [
+        "src"
+    ]
+}
