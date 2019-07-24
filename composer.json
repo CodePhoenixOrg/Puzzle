@@ -17,7 +17,7 @@
             "src/lib/"
         ],
         "exclude-from-classmap": [
-            "src/lib/puzzle_library.php"
+            "src/lib/ipuzzle_library.php"
         ],
         "psr-4": {
             "Puzzle\\" : ""
