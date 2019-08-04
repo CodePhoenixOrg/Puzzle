@@ -17,17 +17,26 @@
             "src/lib/"
         ],
         "exclude-from-classmap": [
-            "src/lib/ipuzzle_library.php"
+            "src/lib/ipuzzle_library.php",
+            "src/lib/ipz_db.php",
+            "src/lib/ipz_dico.php",
+            "src/lib/ipz_pdf.php",
+            "src/lib/ipz_init.php",
+            "src/lib/ipz_empty_file.php",
+            "src/lib/ipz_calendar.php",
+            "src/lib/ipz_connection.php"
         ],
         "psr-4": {
             "Puzzle\\" : ""
         },
         "files": [
-            "src/lib/ipz_misc.php"
+            "src/lib/ipz_misc.php",
+            "src/lib/ipz_constants.php"
         ]
     },
     "require": {
-        "php": ">=7.0.0"
+        "php": ">=7.0.0",
+        "phink/phink": ">=0.9"
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*"

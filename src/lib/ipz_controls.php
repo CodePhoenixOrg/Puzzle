@@ -59,7 +59,7 @@ class Controls extends Base {
 
 		$result.="<table valign='top' bgcolor='black' border='0' cellpadding='0' cellspacing='1' width='400' height='400'>\n";
 		$result.="<tr bgcolor='lightgrey'><td colspan='$tab_count'>\n";
-		$result.="<form method='post' name='".$name."Form' action='page.php?id=$id&lg=$lg'>\n";
+		$result.="<form method='post' name='".$name."Form' action='page.html?id=$id&lg=$lg'>\n";
 
 		$result.=$hidden;
 		$result.=$tab_ctrl;

@@ -165,7 +165,7 @@ class FramedBlocks
                 //echo "$request<br>";
             }
         
-            $sub_menu.="<tr id=\"$index$count\" onMouseOver=\"window.status='';setRowColor(this, hlBackColor, hlTextColor);\" onMouseOut=\"setBackRowColor(this);\"><td><a href=\"page.php?id=$index&lg=$lg$request\" target=\"$target\"><span id=\"caption_$index$count$zero\" style=\"color:$fore_color\">$caption</span></a></td></tr>\n";
+            $sub_menu.="<tr id=\"$index$count\" onMouseOver=\"window.status='';setRowColor(this, hlBackColor, hlTextColor);\" onMouseOut=\"setBackRowColor(this);\"><td><a href=\"page.html?id=$index&lg=$lg$request\" target=\"$target\"><span id=\"caption_$index$count$zero\" style=\"color:$fore_color\">$caption</span></a></td></tr>\n";
             $count++;
         }
     
@@ -247,7 +247,7 @@ class FramedBlocks
             $target=$rows[4];
             $link=$rows[5];
             $page=$rows[6];
-            $sub_menu.="<tr id=\"$index$count\" onMouseOver=\"setRowColor(this, hlBackColor, hlTextColor);\" onMouseOut=\"setBackRowColor(this);\"><td><a href=\"page.php?id=$index&lg=" . $lg . "\" target=\"$target\"><span id=\"caption_$index$count$zero\" style=\"color:$fore_color\">$caption</span></a></td></tr>\n";
+            $sub_menu.="<tr id=\"$index$count\" onMouseOver=\"setRowColor(this, hlBackColor, hlTextColor);\" onMouseOut=\"setBackRowColor(this);\"><td><a href=\"page.html?id=$index&lg=" . $lg . "\" target=\"$target\"><span id=\"caption_$index$count$zero\" style=\"color:$fore_color\">$caption</span></a></td></tr>\n";
             $count++;
         }
     
@@ -361,7 +361,7 @@ class FramedBlocks
         }
 
         if ($status==MEMBER_LOGGED_OUT) {
-            $connection_link="\t<a href=\"page.php?di=ed_membe&lg=$lg&action=Ajouter\" target=\"$target\">Devenir membre >></a>\n";
+            $connection_link="\t<a href=\"page.html?di=ed_membe&lg=$lg&action=Ajouter\" target=\"$target\">Devenir membre >></a>\n";
         } elseif ($status==MEMBER_LOGGED_IN) {
             $connection_link="\t<a href=\"menu.php?id=$id&lg=$lg&logout=1\">Déconnexion</a>\n";
         }

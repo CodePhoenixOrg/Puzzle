@@ -183,7 +183,7 @@ class Blocks extends Base
             $page=$rows[6];
             //echo "$caption;$link<br>";
         
-            $url="page.php?id=$index&lg=$lg";
+            $url="page.html?id=$index&lg=$lg";
             if (substr($link, 0, 7)=="http://") {
                 $target=" target=\"_new\"";
                 $url=$link;
@@ -273,7 +273,7 @@ class Blocks extends Base
             $target=$rows[4];
             $link=$rows[5];
             $page=$rows[6];
-            $sub_menu.="<tr id=\"$index$count\" onMouseOver=\"setRowColor(this, hlBackColor, hlTextColor);\" onMouseOut=\"setBackRowColor(this);\"><td><a href=\"page.php?id=$index&lg=" . $lg . "\"><span id=\"caption_$index$count$zero\" style=\"color:$fore_color\">$caption</span></a></td></tr>\n";
+            $sub_menu.="<tr id=\"$index$count\" onMouseOver=\"setRowColor(this, hlBackColor, hlTextColor);\" onMouseOut=\"setBackRowColor(this);\"><td><a href=\"page.html?id=$index&lg=" . $lg . "\"><span id=\"caption_$index$count$zero\" style=\"color:$fore_color\">$caption</span></a></td></tr>\n";
             $count++;
         }
     
@@ -347,9 +347,9 @@ class Blocks extends Base
         }
 
         if ($status==MEMBER_LOGGED_OUT) {
-            $connection_link="\t<a href=\"page.php?di=ed_membe&lg=$lg&action=Ajouter\">Devenir membre >></a>\n";
+            $connection_link="\t<a href=\"page.html?di=ed_membe&lg=$lg&action=Ajouter\">Devenir membre >></a>\n";
         } elseif ($status==MEMBER_LOGGED_IN) {
-            $connection_link="\t<a href=\"page.php?id=$id&lg=$lg&logout=1\">Déconnexion</a>\n";
+            $connection_link="\t<a href=\"page.html?id=$id&lg=$lg&logout=1\">Déconnexion</a>\n";
         }
 
         if ($apps_login) {
@@ -359,7 +359,7 @@ class Blocks extends Base
         if ($logout) {
             session_destroy();
             $js=	"<script language=JavaScript>".
-            "window.location.href='page.php?id=1&lg=$lg';".
+            "window.location.href='page.html?id=1&lg=$lg';".
             "</script>\n";
             echo $js;
         }

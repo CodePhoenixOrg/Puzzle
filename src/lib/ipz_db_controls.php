@@ -20,6 +20,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 namespace Puzzle\Data;
 
+use Phink\Registry\TRegistry;
+
 //$hostname=getHttpRoot()."/";
 class Controls extends \Puzzle\Base
 {
@@ -327,7 +329,7 @@ class Controls extends \Puzzle\Base
         $on_click="";
     
         if ($page_link=="") {
-            $page_link="page.php";
+            $page_link="page.html";
         }
         /*elseif($page_link!="") {
             if(substr($page_link, 0, 1)=="/") {
@@ -449,7 +451,7 @@ class Controls extends \Puzzle\Base
         $on_click="";
     
         if ($page_link=="") {
-            $page_link="page.php";
+            $page_link="page.html";
         }
         /*elseif($page_link!="") {
             if(substr($page_link, 0, 1)=="/") {
@@ -532,6 +534,8 @@ class Controls extends \Puzzle\Base
             $color=$grid_colors;
         }
         $hidden_fields = '';
+
+        $colors = TRegistry::read('ini', 'grid_colors');
 
         if (!empty($colors)) {
             $border_color=$colors["border_color"];
@@ -643,15 +647,15 @@ class Controls extends \Puzzle\Base
         if (substr($page_link, 0, 1)=="|") {
             $image_field=substr($page_link, 1, strlen($page_link)-1);
             $is_image=true;
-            $page_link="page.php";
+            $page_link="page.html";
         }
         if (substr($page_link, 0, 1)=="&") {
             $web_field=substr($page_link, 1, strlen($page_link)-1);
-            $page_link="page.php";
+            $page_link="page.html";
         } elseif (substr($page_link, 0, 1)=="@") {
             $web_field=substr($page_link, 1, strlen($page_link)-1);
             $is_url=true;
-            $page_link="page.php";
+            $page_link="page.html";
         }
 
     
@@ -718,7 +722,7 @@ class Controls extends \Puzzle\Base
     
         //"<input type=\"hidden\" name=\"curl_pager\" value=\"$curl_pager\">\n".
         if ($can_filter) {
-            $filters="<form method=\"post\" action=\"page.php?id=$pager_id&lg=$lg\" name=\"filter\">\n".
+            $filters="<form method=\"post\" action=\"page.html?id=$pager_id&lg=$lg\" name=\"filter\">\n".
             $hidden_fields.
             "<tr>\n";
             if ($fields_count>1) {
@@ -828,7 +832,7 @@ class Controls extends \Puzzle\Base
                             $url=$url_field;
                             $target=" target=\"_new\"";
                         } else {
-                            $url="page.php?$page_id$curl_rows";
+                            $url="page.html?$page_id$curl_rows";
                         }
                     }
                     $ahref="<a href='$url'$target>";
@@ -934,7 +938,7 @@ class Controls extends \Puzzle\Base
                 $page_id="di=$rows_id&lg=$lg&action=$add";
             }
             
-            $url="page.php?$page_id$curl_rows";
+            $url="page.html?$page_id$curl_rows";
             $ahref="<a href='$url$curl_rows'$target>";
             $a="</a>";
             
@@ -1129,15 +1133,15 @@ class Controls extends \Puzzle\Base
         if (substr($page_link, 0, 1)=="|") {
             $image_field=substr($page_link, 1, strlen($page_link)-1);
             $is_image=true;
-            $page_link="page.php";
+            $page_link="page.html";
         }
         if (substr($page_link, 0, 1)=="&") {
             $web_field=substr($page_link, 1, strlen($page_link)-1);
-            $page_link="page.php";
+            $page_link="page.html";
         } elseif (substr($page_link, 0, 1)=="@") {
             $web_field=substr($page_link, 1, strlen($page_link)-1);
             $is_url=true;
-            $page_link="page.php";
+            $page_link="page.html";
         }
 
         if (is_array($criterions) && $can_filter) {
@@ -1176,7 +1180,7 @@ class Controls extends \Puzzle\Base
         "<tr bgcolor='$header_back_color'>\n";
     
         if ($can_filter) {
-            $filters="<form method=\"post\" action=\"page.php?id=$pager_id&lg=$lg\" name=\"filter\"><tr>\n";
+            $filters="<form method=\"post\" action=\"page.html?id=$pager_id&lg=$lg\" name=\"filter\"><tr>\n";
             if ($fields_count>1) {
                 $filters.="<td bgcolor=\"$pager_color\"><img src=\"img/filter.png\" border=\"0\"></td>";
             }
@@ -1289,7 +1293,7 @@ class Controls extends \Puzzle\Base
                             $url=$url_field;
                             $target=" target=\"_new\"";
                         } else {
-                            $url="page.php?$page_id$curl_rows";
+                            $url="page.html?$page_id$curl_rows";
                         }
                     }
                     $ahref="<a href='$url'$target>";
@@ -1406,7 +1410,7 @@ class Controls extends \Puzzle\Base
                 $page_id="di=$rows_id&lg=$lg&action=$add";
             }
             
-            $url="page.php?$page_id$curl_rows";
+            $url="page.html?$page_id$curl_rows";
             $ahref="<a href='$url$curl_rows'$target>";
             $a="</a>";
             
@@ -1645,7 +1649,7 @@ class Controls extends \Puzzle\Base
                             $url=$url_field;
                             $target=" target=\"_new\"";
                         } else {
-                            $url="page.php?$page_id$curl_rows";
+                            $url="page.html?$page_id$curl_rows";
                         }
                     }
                     $ahref="<a href='$url'$target>";
@@ -1743,7 +1747,7 @@ class Controls extends \Puzzle\Base
                 $page_id="di=$rows_id&lg=$lg&action=$add";
             }
             
-            $url="page.php?$page_id$curl_rows";
+            $url="page.html?$page_id$curl_rows";
             $ahref="<a href='$url$curl_rows'$target>";
             $a="</a>";
             

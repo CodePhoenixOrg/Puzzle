@@ -38,7 +38,7 @@ class Design extends Base
 <script language="JavaScript" src="js/pz_design.js"></script>
 JAVASCRIPT;
 
-        echo $js;
+        // echo $js;
     }
 
     public function createPanel($name, $caption, $content, $colors, $panel_width)

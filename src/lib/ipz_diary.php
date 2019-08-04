@@ -399,7 +399,7 @@ function createFramedDiaryControl($date, $target, $colors=array()) {
 	$params['link_after_date']	= 1; // Enable link on days after the current day
 
 	// Modified for Puzzle Project
-	$params['link_on_day']		= 'page.php?di=diary&lg='.$lg.'&date=%%dd%%'; // Link to put on each day
+	$params['link_on_day']		= 'page.html?di=diary&lg='.$lg.'&date=%%dd%%'; // Link to put on each day
 	$params['caption_face']		= 'Verdana, Arial, Helvetica'; // Default font to use
 	$params['caption_size']		= 8; // Font size in px
 	
@@ -421,7 +421,7 @@ function createFramedDiaryControl($date, $target, $colors=array()) {
 	$params['short_day_name']      = 1;
 	// Modified for Puzzle Project
 	//$params['link_on_hour']        = $PHP_SELF.'?hour=%%hh%%';
-	$params['link_on_hour']	= 'page.php?di=diary&lg='.$lg.'&hour=%%hh%%';
+	$params['link_on_hour']	= 'page.html?di=diary&lg='.$lg.'&hour=%%hh%%';
 
 	$diary_txt = diaryLang($lg);
 	
@@ -537,7 +537,7 @@ function createFramedDiaryControl($date, $target, $colors=array()) {
 				$output .= '<td'.$bgstyle.'>'.$i.$txt_2_use.'</td>'."\n";
 			} else {
 				$date_dd="date=$current_year$current_month_2$j";
-				$page_link_of_day="page.php?di=diary&lg=$lg&$date_dd";
+				$page_link_of_day="page.html?di=diary&lg=$lg&$date_dd";
 				$menu_link_of_day="$PHP_SELF?id=$id&lg=$lg&$date_dd";
 				$output .= "<td$bgstyle><a href='$page_link_of_day' target='$target' onClick='parent.frames[\"menu\"].location.href=\"$menu_link_of_day\";'><span style='color:$text_color'>$i</span></a>$txt_2_use</td>\n";
 			}
@@ -569,7 +569,7 @@ function createFramedDiaryControl($date, $target, $colors=array()) {
 	$d = '<img src="'.$img.'/scroll/right_0.gif" border="0">';
 	$dd = '<img src="'.$img.'/scroll/fastRight_0.gif" border="0">';
 
-	$page_link_of="page.php?di=diary&lg=$lg&date=";
+	$page_link_of="page.html?di=diary&lg=$lg&date=";
 	$menu_link_of="$PHP_SELF?id=$id&lg=$lg&date=";
 	
 	$previous_day_link = "<a href='$page_link_of$previous_day' title='".$diary_txt[$lg]['misc'][0]."' target='$target' onClick='parent.frames[\"menu\"].location.href=\"$menu_link_of$previous_day\";'>$g</a>\n";
@@ -709,7 +709,7 @@ function createDiaryGrid($name="", $date="", $id=0, $page_link="",  $curl_rows="
 	}
 
 	//echo "$sql<p>";
-	$result = $cs->query($sql, $conn) or die(mysqli_error());
+	$result = $cs->query($sql, $conn);
 	$num=$result->num_rows;
 	$r=0;
 	$div="";
